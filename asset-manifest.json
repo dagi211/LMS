@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/LMS/static/css/main.d8bca71e.css",
-    "main.js": "/LMS/static/js/main.20cac8cc.js",
-    "static/js/787.090ebb35.chunk.js": "/LMS/static/js/787.090ebb35.chunk.js",
-    "static/media/logoC.png": "/LMS/static/media/logoC.18a20b72f1c1ed229339.png",
-    "index.html": "/LMS/index.html",
-    "main.d8bca71e.css.map": "/LMS/static/css/main.d8bca71e.css.map",
-    "main.20cac8cc.js.map": "/LMS/static/js/main.20cac8cc.js.map",
-    "787.090ebb35.chunk.js.map": "/LMS/static/js/787.090ebb35.chunk.js.map"
+    "main.css": "/lib-man-sys/static/css/main.f998bf4c.css",
+    "main.js": "/lib-man-sys/static/js/main.3d870f79.js",
+    "static/js/787.090ebb35.chunk.js": "/lib-man-sys/static/js/787.090ebb35.chunk.js",
+    "static/media/bg4.jpg": "/lib-man-sys/static/media/bg4.03ec505c07e3b358be7d.jpg",
+    "static/media/logoC.png": "/lib-man-sys/static/media/logoC.18a20b72f1c1ed229339.png",
+    "index.html": "/lib-man-sys/index.html",
+    "main.f998bf4c.css.map": "/lib-man-sys/static/css/main.f998bf4c.css.map",
+    "main.3d870f79.js.map": "/lib-man-sys/static/js/main.3d870f79.js.map",
+    "787.090ebb35.chunk.js.map": "/lib-man-sys/static/js/787.090ebb35.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d8bca71e.css",
-    "static/js/main.20cac8cc.js"
+    "static/css/main.f998bf4c.css",
+    "static/js/main.3d870f79.js"
   ]
 }
