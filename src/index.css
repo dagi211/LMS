@@ -23,6 +23,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 .container{
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
   height: 100%;
   display: block;
@@ -107,6 +109,7 @@ a{
   color: black;
   /* background: transparent; */
   backdrop-filter: blur(4px);
+  z-index: -1;
   
 }
 
@@ -224,6 +227,8 @@ p>a:hover{
 .mover-reg{
   position: relative;
   top: 60px;
+  
+  
 
 }
 
@@ -262,3 +267,49 @@ hr{
   font-weight: 500px;
 }
 
+.books-table{
+  padding: 50px;
+
+  
+}
+
+table ,th,td{
+
+  position: relative;
+  top: 20px;
+  left: 30px;
+  
+  padding-left: 20px;
+  padding-right: 25px;
+  padding-top: 10px;
+  border-collapse: collapse;
+  border-radius: 15px;
+  
+
+ 
+}
+
+th, td{
+  position: relative;
+  left: -10px;
+  padding: 20px;
+  border-bottom:  0.2px solid black;
+  border-radius:  10px;
+  z-index: -1;
+  
+
+}
+
+.move-table{
+  position: relative;
+  top: -945px;
+  left: 1000px;
+  width: 500px;
+  height: 500px;
+  z-index: -1;
+}
+
+.register-mover{
+  position: relative;
+  left: -300px;
+}
