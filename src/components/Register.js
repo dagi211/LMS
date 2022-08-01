@@ -128,7 +128,6 @@ const [table, setTable] = React.useState(
         
     </form>
 
-    {/* <registerTable bookName={table.bookName} author={table.author} ISBN={table.ISBN} copiesAvailable={table.copiesAvailable} /> */}
 
     <div className="move-table"> 
     <table className="books-table login-form">
@@ -140,7 +139,7 @@ const [table, setTable] = React.useState(
      
    </tr>
 
-  {/* <RegisterTable /> */}
+
   <tr className='rows'>
        <td>{table.bookName}</td>
        <td>{table.author}</td>
