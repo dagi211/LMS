@@ -16,7 +16,7 @@ function Return() {
         
         
 
-        <button className='btn btn-loan'>Loan</button>
+        <button className='btn btn-loan'>Return</button>
         
     </form>
 

@@ -116,6 +116,7 @@ a{
   /* background: transparent; */
   backdrop-filter: blur(4px);
   /* z-index: -1; */
+  transition: 500ms;
   
 }
 
@@ -157,7 +158,7 @@ input{
 }
 
 .login-info:hover{
-  border-left: 2px solid rgb(21, 20, 35);
+  border-bottom: solid rgb(16, 89, 113);
   border-top-left-radius: 0px;
 
  
@@ -211,7 +212,7 @@ p>a{
 }
 
 p>a:hover{
-  color:rgb(77, 84, 90)
+  color:rgb(25, 50, 72)
 }
 
 .mover{
@@ -275,6 +276,8 @@ hr{
 
 .books-table{
   padding: 50px;
+  overflow-x: auto;
+  height: auto;
 
   
 }
@@ -318,4 +321,46 @@ th, td{
 .register-mover{
   position: relative;
   left: -300px;
+}
+
+.loan-table{
+  overflow: hidden;
+  width: 550px;
+}
+
+/* .login-form{
+  position: relative;
+  top: 200px;
+} */
+
+.signup-form{
+  position: relative;
+  left: 100px;
+  top: -100px;
+  height: 730px;
+  display: none;
+}
+
+.login-mover{
+  position: relative;
+  /* top: -250px; */
+}
+
+.signup-form2{
+  position: relative;
+  left: 100px;
+  top: -100px;
+  height: 730px;
+  /* display: none; */
+}
+
+.login-mover2{
+  position: relative;
+  top: -250px;
+}
+
+.signup{
+  height: 750px;
+  position: relative;
+  top:-100px;
 }

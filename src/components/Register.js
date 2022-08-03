@@ -1,130 +1,69 @@
 import React from 'react'
-// import RegisterTable from './registerTable'
-// import RegisterTable from './RegisterTable'
-
-function Register() {
-  const [bookDetails, setBookDetails] = React.useState([{
+import {nanoid } from "nanoid"
+const fs = require('fs')
+function Register(props) {
+  const [books, setBooks] = React.useState([])
+  const [bookDetails, setBookDetails] = React.useState({
           bookName: "",
           author: '',
           ISBN: "",
           copiesAvailable: "",
-  }])
- 
+  })
 
-const [table, setTable] = React.useState(
-  [{
-    bookName: "",
-    author: '',
-    ISBN: "",
-    copiesAvailable: "",
-}]
-)
 
-  function saveBooks(){
-    setTable(
-      {
-        bookName:bookDetails.bookName,
-        author:bookDetails.author,
-        ISBN: bookDetails.ISBN,
-        copiesAvailable: bookDetails.copiesAvailable,
-  
-      }
-    )
+function handleFormChange(e){
+  e.preventDefault()
+  const fieldName = e.target.getAttribute('name');
+  const fieldValues = e.target.value
+  const newFormData = {...bookDetails}
+
+  // const newBookDetails = {...bookDetails}
+  newFormData[fieldName] = fieldValues
+
+  setBookDetails(newFormData)
+
+
+}
+
+function handleFormSubmit(e) {
+  e.preventDefault()
+
+  const newBookDetails = {
+    id: nanoid(),
+    bookName: bookDetails.bookName,
+    author: bookDetails.author,
+    ISBN: bookDetails.ISBN,
+    copiesAvailable: bookDetails.copiesAvailable
   }
-
-
-  //   const td = table.map((data)=>{
-  //   return(
-  //     `<tr className='rows'>
-  //     <td>{table.bookName}</td>
-  //     <td>{table.author}</td>
-  //     <td>{table.ISBN}</td>
-  //     <td>{table.copiesAvailable}</td>
-  //   </tr>`
-      
-  //   )
-  // })
-
-  function trackName(e){
-
-    setBookDetails(prevDetails=>{
-      return (
-        {
-          ...prevDetails,
-          bookName: e.target.value 
-        }
-      )
-    
-    })
+  const table = [...books, newBookDetails];
+  setBooks(table)
   
-  }
 
 
-  function trackAuthor(e){
+}
 
-    setBookDetails(prevDetails=>{
-      return (
-        {
-          ...prevDetails,
-          author: e.target.value 
-        }
-      )
-    
-    })
-  
-  }
- 
-
-  function trackISBN(e){
-
-    setBookDetails(prevDetails=>{
-      return (
-        {
-          ...prevDetails,
-          ISBN: e.target.value 
-        }
-      )
-    
-    })
-  
-  }
-
-
-  function trackCopies(e){
-
-    setBookDetails(prevDetails=>{
-      return (
-        {
-          ...prevDetails,
-          copiesAvailable: e.target.value 
-        }
-      )
-    
-    })
-  
-  }
-
-
- 
+React.useEffect(()=>{
+  localStorage.setItem("books", JSON.stringify(books))
+},[books])
 
   return (
     
     <div className='container'>
         
-    <form className='login-form loan-form register-mover'  action="">
+    <form onSubmit={handleFormSubmit}  className='login-form loan-form register-mover'  action="">
 
         <h1 className="header">Register Books</h1>
         <hr />
      <div className="mover-reg">
-        <input className='login-info' type="text" name="Email" placeholder='Insert book name' value={bookDetails.bookName} onChange={trackName} />
-        <input className='login-info' type="text" name="Email" placeholder='Insert Author' value={bookDetails.author} onChange={trackAuthor}  />
-        <input className='login-info' type="text" name="ISBN" placeholder='Insert the ISBN number' value={bookDetails.ISBN} onChange={trackISBN}/>
-        <input className='login-info' type="text" name="Amount" placeholder='Insert number of available copies' value={bookDetails.copiesAvailable} onChange={trackCopies} />
+        <input className='login-info' onChange = {handleFormChange}type="text"  name="bookName" placeholder='Insert book name' value={bookDetails.bookName}  />
+        <input className='login-info' onChange = {handleFormChange}type="text"  name="author" placeholder='Insert Author' value={bookDetails.author}   />
+        <input className='login-info' onChange = {handleFormChange}type="number"  name="ISBN" placeholder='Insert the ISBN number' value={bookDetails.ISBN} />
+        <input className='login-info' onChange = {handleFormChange}type="number"  name="copiesAvailable" placeholder='Insert number of available copies' value={bookDetails.copiesAvailable}  />
      </div>
         
         
         
-        <button type="button" onClick={saveBooks} className='btn'  >Register</button>
+        <button type="submit"  className='btn'   >Register</button>
         
     </form>
 
@@ -140,13 +79,33 @@ const [table, setTable] = React.useState(
    </tr>
 
 
-  <tr className='rows'>
-       <td>{table.bookName}</td>
-       <td>{table.author}</td>
-       <td>{table.ISBN}</td>
-       <td>{table.copiesAvailable}</td>
-     </tr>
-   
+  
+       {
+       books.map(books => 
+
+        (
+         <tr className='rows'>
+          <td>{books.bookName}</td>
+          <td>{books.author}</td>
+          <td>{books.ISBN}</td>
+          <td>{books.copiesAvailable}</td>
+         </tr>
+       
+       )
+      
+
+
+       )}
+
+
+{/* <tr className='rows'>
+          <td>{table.bookName}</td>
+          <td>{table.author}</td>
+          <td>{table.ISBN}</td>
+          <td>{table.copiesAvailable}</td>
+         </tr>
+     
+    */}
 
    
    
@@ -161,5 +120,6 @@ const [table, setTable] = React.useState(
 
   )
 }
+
 
 export default Register

@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from "./logoC.png"
-import {Route, Router} from "react-router-dom"
+// import {Route, Router} from "react-router-dom"
 function Navbar() {
   return (
     
@@ -16,6 +16,7 @@ function Navbar() {
         <li><a className="nav-links" href="/Register">Register Books</a></li>
         <li><a className="nav-links" href="/Loan">Loan Books</a></li>
         <li><a className="nav-links" href="/Return">Return Books</a></li>
+        <li><a className="nav-links" href="/Signup">Sign up</a></li>
       </ul>
         
         
